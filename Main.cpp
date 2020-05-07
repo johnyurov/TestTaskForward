@@ -91,7 +91,7 @@ int main()
 		}
 		auto end = chrono::steady_clock::now();
 		auto elapsed_mcrs = chrono::duration_cast<chrono::microseconds>(end - begin);
-		cout << "The time: " << elapsed_mcrs.count() << " microsec\n";
+		cout << "Время превышения температуры " << elapsed_mcrs.count() << " microsec\n";
 		break;
 	}
 	case '2':
