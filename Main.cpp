@@ -46,7 +46,10 @@ int main()
 		else
 		{
 			std::cin.ignore(32767, '\n');
-			break;
+			if (enviromentTemp < 110)
+			{
+				break;
+			}
 		}
 	}
 	engineTemp = enviromentTemp;

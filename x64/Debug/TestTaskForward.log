@@ -1,6 +1,6 @@
 ﻿  Main.cpp
-C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(74,28): warning C4244:  =: преобразование "int" в "float", возможна потеря данных
-C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(75,28): warning C4244:  +=: преобразование "float" в "int", возможна потеря данных
-C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(76,47): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(77,22): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(77,28): warning C4244:  =: преобразование "int" в "float", возможна потеря данных
+C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(78,28): warning C4244:  +=: преобразование "float" в "int", возможна потеря данных
+C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(79,47): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Евгений\source\repos\TestTaskForward\Main.cpp(80,22): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
   TestTaskForward.vcxproj -> C:\Users\Евгений\source\repos\TestTaskForward\x64\Debug\TestTaskForward.exe
