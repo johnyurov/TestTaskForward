@@ -52,7 +52,15 @@ int main()
 	engineTemp = enviromentTemp;
 	cout << "Для включения двигателя введите 1 " << endl;
 	cout << "Для выхода введите 2 " << endl;
-	cin >> onOff;
+	do
+	{
+		cin >> onOff;
+		if (onOff == '1' || onOff == '2')
+		{
+			break;
+		}
+		cout << "Вы ввели неверное выражение, попробуйте еще раз" << endl;
+	} while (true);
 	switch (onOff)
 	{
 	case '1':
@@ -98,15 +106,5 @@ int main()
 	{
 		exit(1);
 	}
-	default:
-		do
-		{
-			cout << "Вы ввели неверное выражение, попробуйте еще раз" << endl;
-			cin >> onOff;
-			if (onOff == '1' || onOff == '2')
-			{
-				break;
-			}
-		} while (true);
 	}
 }
