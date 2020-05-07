@@ -22,7 +22,6 @@ int main()
 	//скорости вращения коленвала V(крутящий момент в Н∙м, скорость вращения в радиан / сек) : 
 	int arrM[] = { 20,75,100,105,75,0 };
 	int arrV[] = { 0, 75, 150,200,250,300 };
-	int tmp = arrV[0];
 	//Температура окружающей среды
 	double enviromentTemp = 0;
 	//Температура двигателя
@@ -76,13 +75,13 @@ int main()
 			{
 				acceleration = arrM[i] / inertion;
 				arrV[i] += acceleration;
-				heatingSpeed = arrM[i] * hM * pow(tmp, 2) * hV;
+				heatingSpeed = arrM[i] * hM * pow(arrV[i], 2) * hV;
 				coolingSpeed = c * (enviromentTemp - engineTemp);
 				engineTemp += heatingSpeed;
 				engineTemp += coolingSpeed;
 				if (engineTemp > 0 && engineTemp < engineMaxTemp)
 				{
-					cout << "Максимальная достигнутая температура двигателя " << engineMaxTemp << endl;
+					cout << "Максимально достигнутая температура двигателя " << engineMaxTemp << endl;
 					break;
 				}
 				engineMaxTemp = engineTemp;
@@ -90,7 +89,6 @@ int main()
 				{
 					if (arrV[i] >= arrV[i + 1])
 					{
-						tmp = arrV[i + 1];
 						i++;
 					}
 				}
@@ -101,8 +99,15 @@ int main()
 			}
 		}
 		auto end = chrono::steady_clock::now();
-		auto elapsed_mcrs = chrono::duration_cast<chrono::microseconds>(end - begin);
-		cout << "Время превышения температуры " << elapsed_mcrs.count() << " microsec\n";
+		if (engineMaxTemp >= 110)
+		{
+			auto elapsed_mcrs = chrono::duration_cast<chrono::microseconds>(end - begin);
+			cout << "Время превышения температуры двигателя" << elapsed_mcrs.count() << " microsec\n";
+		}
+		else
+		{
+			cout << "Температура двигателя не была превышена" << endl;
+		}
 		break;
 	}
 	case '2':
