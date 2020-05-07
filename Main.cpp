@@ -38,12 +38,16 @@ int main()
 		system("cls");
 		cout << "Введите температуру окуржающей среды: " << endl;
 		cin >> enviromentTemp;
-		if (std::cin.fail())
+		if (cin.fail())
 		{
-			std::cin.clear();
-			std::cin.ignore(32767, '\n');
+			cin.clear();
+			cin.ignore(32767, '\n');
 		}
-		else break;
+		else
+		{
+			std::cin.ignore(32767, '\n');
+			break;
+		}
 	}
 	engineTemp = enviromentTemp;
 	cout << "Для включения двигателя введите 1 " << endl;
